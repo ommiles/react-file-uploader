@@ -6,24 +6,25 @@ import axios from 'axios';
 const { Dragger } = Upload;
 
 const fileList = [
-    {
-      uid: '-1',
-      name: 'xxx.png',
-      status: 'done',
-      url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-      thumbUrl: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
-    },
-  ];
+  {
+    uid: '-1',
+    name: 'xxx.png',
+    status: 'done',
+    url: 'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+    thumbUrl:
+      'https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png',
+  },
+];
 
 const props = {
   name: 'file',
   multiple: true,
   listType: 'picture',
   //   defaultFileList: {[...fileList]},
-//   action: 'http://localhost:5000/upload',
-//   headers: {
-//     'Content-Type': 'multipart/form-data',
-//   },
+  //   action: 'http://localhost:5000/upload',
+  //   headers: {
+  //     'Content-Type': 'multipart/form-data',
+  //   },
   onChange(info) {
     const { status } = info.file;
     const formData = new FormData();
@@ -39,15 +40,14 @@ const props = {
     }
 
     try {
-        const res = axios.post('http://localhost:5000/upload', formData, {
-            headers: {
-              'Content-Type': 'multipart/form-data'
-            },
-        })
-    } catch(err) {
-        console.log(err)
+      const res = axios.post('http://localhost:5000/upload', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      });
+    } catch (err) {
+      console.log(err);
     }
-
   },
   onDrop(e) {
     console.log('Dropped files', e.dataTransfer.files);
@@ -56,7 +56,7 @@ const props = {
 
 export const FileUpload = () => {
   return (
-    <Dragger {...props}   defaultFileList={[...fileList]} >
+    <Dragger {...props} defaultFileList={[...fileList]}>
       <p className='ant-upload-drag-icon'>
         <InboxOutlined />
       </p>
