@@ -1,8 +1,10 @@
 const express = require('express');
 const fileUpload = require('express-fileupload');
+import Cors from 'cors';
 
 const app = express(); // initialize express
 app.use(fileUpload()); // initialize express-fileupload
+app.use(Cors()); // 
 
 // we just need one endpoint for our upload
 // endpoint we want to send req to from react
