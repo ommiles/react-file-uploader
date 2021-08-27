@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faReact } from '@fortawesome/fontawesome-svg-core';
 // import { faReact } from '@fortawesome/react-fontawesome';
 import { faReact } from '@fortawesome/free-brands-svg-icons';
-import FileUpload from './components/FileUpload';
+import { FileUpload } from './components/FileUpload';
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <FontAwesomeIcon icon={faReact} />
         React File Upload
       </h4>
+      <FileUpload />
     </div>
   );
 }
